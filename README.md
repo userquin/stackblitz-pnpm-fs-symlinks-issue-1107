@@ -23,7 +23,7 @@ Filtering [fs.readdir](./src/main.ts#L75) will not return nor follow symlinks, s
 6) You won't get all the files when `fs.readdir('/node_modules/', { withFileTypes: true })` is called and filtered by `isDirectory()`.
 7) You can also click `Install Deps and List Node Modules` button, in both cases we have the same problem.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/userquin/webcontainer-fs-symlink-repro)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/userquin/stackblitz-pnpm-fs-symlinks-issue-1107)
 
 
 ## Additional Problem
