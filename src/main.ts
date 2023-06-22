@@ -12,17 +12,17 @@ document.querySelector('#app')!.innerHTML = `
         <li>Run <pre>pnpm install</pre> in the terminal once dev server started.</li>
         <li>Run <pre>ls -l node_modules</pre>, you'll see the packages (some with symlinks created by PNPM) and <pre>.pnpm</pre> folder.</li>
         <li>Run <pre>ls -l node_modules/vite</pre>, you won't see any file.</li>
-        <li>Click <pre>List Node Modules</pre> button.</li>
+        <li>Click <pre>List Vite Folder</pre> button.</li>
         <li>You won't get any file when <pre>fs.readdir('/node_modules/vite', { withFileTypes: true })</pre> is called.</pre>.</li>
       </ol>
-      <button id="button" disabled>List Node Modules</button>
+      <button id="button" disabled>List Vite Folder</button>
     </div>
     <div>
-      <h2>Node Modules</h2>
+      <h2>node_modules/vite content</h2>
       <ol id="node-modules"></ol>
     </div>
     <div>
-      <h2>List Node Modules Output</h2>
+      <h2>List Vite Folder Output</h2>
       <ol id="ls-l-command"></ol>
     </div>
     <div id="terminal" class="terminal"></div>
