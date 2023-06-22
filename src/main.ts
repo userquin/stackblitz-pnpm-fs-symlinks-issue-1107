@@ -60,19 +60,19 @@ window.addEventListener('load', async () => {
   }
 
   async function listViteFolder() {
-    const viteFiles = await webContainerInstance.fs.readdir(
+    const nodeModules = await webContainerInstance.fs.readdir(
       '/node_modules/',
       { withFileTypes: true },
     )
 
-    if (viteFiles.length) {
-      viteFiles.forEach((file) => {
+    if (nodeModules.length) {
+      nodeModules.forEach((file) => {
         const li = document.createElement('li')
         li.textContent = `${file.name}${file.isDirectory() ? '/' : ''}`
         lsElement.appendChild(li)
       })
 
-      const filteredNodeModules = viteFiles.filter(file => file.isDirectory())
+      const filteredNodeModules = nodeModules.filter(file => file.isDirectory())
       if (filteredNodeModules.length) {
         filteredNodeModules.forEach((file) => {
           const li = document.createElement('li')
