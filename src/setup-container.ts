@@ -49,3 +49,25 @@ export async function load(terminalContainer: HTMLElement) {
 
   return webContainerInstance
 }
+
+export async function installDependencies() {
+  if (!webContainerInstance)
+    return
+
+  const shellProcess = await webContainerInstance.spawn('pnpm', ['install'])
+  shellProcess.output.pipeTo(
+    new WritableStream({
+      write(data) {
+        terminal.write(data)
+      },
+      close() {
+        terminal.writeln('\n')
+      },
+    }),
+  )
+
+  const installExitCode = await shellProcess.exit
+
+  if (installExitCode !== 0)
+    throw new Error(`Unable to run "pnpm install": ${installExitCode}`)
+}
