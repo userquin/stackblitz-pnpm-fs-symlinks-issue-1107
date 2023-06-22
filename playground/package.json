@@ -1,0 +1,9 @@
+{
+  "name": "stackblitz-fs-symlinks-issue-playground",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "stackblitz-fs-symlinks-issue": "workspace:*"
+  }
+}
